@@ -1,0 +1,12 @@
+[Unit]
+Description=auto-epp-go - Automatic amd-pstate epp, rewritten in Go
+After=network.target network-online.target
+
+[Service]
+Type=simple
+User=root
+ExecStart=/usr/local/bin/auto-epp-go
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
