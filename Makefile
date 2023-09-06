@@ -21,4 +21,4 @@ uninstall:
 	rm -f $(SERVICE_DIR)/$(PROGRAM_NAME).service
 	rm -f $(BINARY_DIR)/$(PROGRAM_NAME)
 
-.PHONY: install build clean
+.PHONY: install build clean uninstall
