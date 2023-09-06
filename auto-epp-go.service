@@ -1,5 +1,5 @@
 [Unit]
-Description=auto-epp-go - Automatic amd-pstate epp, rewritten in Go
+Description=auto-epp-go - Automatic EPP Changer for amd-pstate-epp
 After=network.target network-online.target
 
 [Service]
