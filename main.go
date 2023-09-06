@@ -3,9 +3,9 @@ package main
 import (
 	"time"
 
-	"codeberg.org/tfkhdyt/auto-epp-go/checker"
-	"codeberg.org/tfkhdyt/auto-epp-go/config"
-	"codeberg.org/tfkhdyt/auto-epp-go/set"
+	"github.com/tfkhdyt/auto-epp-go/checker"
+	"github.com/tfkhdyt/auto-epp-go/config"
+	"github.com/tfkhdyt/auto-epp-go/set"
 )
 
 func main() {
