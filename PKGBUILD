@@ -18,12 +18,12 @@ source=("$pkgname-$pkgver.tar.gz::https://github.com/tfkhdyt/$pkgname/archive/re
 md5sums=("SKIP")
 
 build() {
-	cd auto-epp-go
+	cd "$pkgname-$pkgver"
 	GOOS=linux GOARCH=amd64 go build -ldflags="-w -s" -o ./bin/auto-epp-go .
 }
 
 package() {
-	cd auto-epp-go
+	cd "$pkgname-$pkgver"
 	install -Dm755 ./bin/auto-epp-go "$pkgdir/usr/bin/auto-epp-go"
 	install -Dm644 ./auto-epp-go.service -t "$pkgdir/usr/lib/systemd/system"
 }
