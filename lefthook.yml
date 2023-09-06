@@ -1,0 +1,14 @@
+pre-commit:
+  parallel: true
+  commands:
+    backend-lint:
+      run: golangci-lint run
+    backend-format:
+      run: gofumpt -w .
+pre-push:
+  parallel: true
+  commands:
+    backend-security-check:
+      run: gosec -exclude=G101 ./...
+    backend-outdated-deps:
+      run: test $(go list -u -m -json all | go-mod-outdated -update -direct | wc -l) -eq 4
