@@ -24,14 +24,16 @@ func CheckChargingStatus() bool {
 		}
 
 		if file.IsDir() || (fileInfo.Mode()&os.ModeSymlink != 0) {
-			typeData, err := os.ReadFile(filepath.Join(powerSupplyPath, file.Name(), "type"))
+			typeData, err := os.
+				ReadFile(filepath.Join(powerSupplyPath, file.Name(), "type"))
 			if err != nil {
 				continue
 			}
 
 			supplyType := strings.TrimSpace(string(typeData))
 			if supplyType == "Mains" {
-				onlineData, err := os.ReadFile(filepath.Join(powerSupplyPath, file.Name(), "online"))
+				onlineData, err := os.
+					ReadFile(filepath.Join(powerSupplyPath, file.Name(), "online"))
 				if err != nil {
 					continue
 				}
@@ -46,7 +48,8 @@ func CheckChargingStatus() bool {
 				}
 
 			} else if supplyType == "Battery" {
-				statusData, err := os.ReadFile(filepath.Join(powerSupplyPath, file.Name(), "status"))
+				statusData, err := os.
+					ReadFile(filepath.Join(powerSupplyPath, file.Name(), "status"))
 				if err != nil {
 					continue
 				}
