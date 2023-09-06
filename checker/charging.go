@@ -3,6 +3,7 @@ package checker
 import (
 	"fmt"
 	"os"
+	"path/filepath"
 	"strconv"
 	"strings"
 )
@@ -23,7 +24,7 @@ func CheckChargingStatus() bool {
 		}
 
 		if file.IsDir() || (fileInfo.Mode()&os.ModeSymlink != 0) {
-			typePath := powerSupplyPath + file.Name() + "/type"
+			typePath := filepath.Join(powerSupplyPath, file.Name(), "type")
 
 			typeData, err := os.ReadFile(typePath)
 			if err != nil {
@@ -32,7 +33,7 @@ func CheckChargingStatus() bool {
 
 			supplyType := strings.TrimSpace(string(typeData))
 			if supplyType == "Mains" {
-				onlinePath := powerSupplyPath + file.Name() + "/online"
+				onlinePath := filepath.Join(powerSupplyPath, file.Name(), "online")
 
 				onlineData, err := os.ReadFile(onlinePath)
 				if err != nil {
@@ -49,7 +50,7 @@ func CheckChargingStatus() bool {
 				}
 
 			} else if supplyType == "Battery" {
-				statusPath := powerSupplyPath + file.Name() + "/status"
+				statusPath := filepath.Join(powerSupplyPath, file.Name(), "status")
 				statusData, err := os.ReadFile(statusPath)
 				if err != nil {
 					continue
