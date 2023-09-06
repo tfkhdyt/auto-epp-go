@@ -18,7 +18,7 @@ source=("$pkgname-$pkgver.tar.gz::https://github.com/tfkhdyt/$pkgname/releases/d
 md5sums=("SKIP")
 
 package() {
-	cd "$pkgname-$pkgver"
+  cd "$srcdir/$pkgname-$pkgver/"
 	install -Dm755 ./auto-epp-go "$pkgdir/usr/bin/auto-epp-go"
 	install -Dm644 ./auto-epp-go.service -t "$pkgdir/usr/lib/systemd/system"
 }
