@@ -8,7 +8,7 @@ import (
 
 func ReadConfig() (string, string) {
 	if _, err := os.Stat(configFile); os.IsNotExist(err) {
-		err := os.WriteFile(configFile, []byte(defaultConfig), 0644)
+		err := os.WriteFile(configFile, []byte(defaultConfig), 0o644)
 		if err != nil {
 			fmt.Println("Failed to create config file:", err)
 			os.Exit(1)

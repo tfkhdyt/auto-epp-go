@@ -15,7 +15,7 @@ func SetGovernor() {
 		if err := os.WriteFile(
 			governorFilePath,
 			[]byte("powersave"),
-			0644,
+			0o644,
 		); err != nil {
 			fmt.Println("Failed to set scaling governor:", err)
 			os.Exit(1)

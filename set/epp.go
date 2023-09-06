@@ -14,7 +14,7 @@ func SetEPP(eppValue string) {
 			cpu,
 		)
 
-		if err := os.WriteFile(eppFilePath, []byte(eppValue), 0644); err != nil {
+		if err := os.WriteFile(eppFilePath, []byte(eppValue), 0o644); err != nil {
 			fmt.Println("Failed to set energy performance preference:", err)
 			os.Exit(1)
 		}
