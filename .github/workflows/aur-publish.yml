@@ -2,7 +2,7 @@ name: aur-publish
 on:
   push:
     tags:
-      - '*'
+      - 'v*.*.2'
 jobs:
   aur-publish:
     runs-on: ubuntu-latest
