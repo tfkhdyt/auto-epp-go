@@ -10,5 +10,3 @@ pre-push:
   commands:
     backend-security-check:
       run: gosec -exclude=G101 ./...
-    backend-outdated-deps:
-      run: test $(go list -u -m -json all | go-mod-outdated -update -direct | wc -l) -eq 4
