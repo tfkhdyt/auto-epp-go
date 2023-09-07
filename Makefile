@@ -1,7 +1,7 @@
 PROGRAM_NAME=auto-epp-go
 
 OUTPUT_DIR=./bin
-BINARY_DIR=/usr/local/bin
+BINARY_DIR=/usr/bin
 SERVICE_DIR=/usr/lib/systemd/system
 
 install: build
