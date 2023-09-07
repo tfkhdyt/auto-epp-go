@@ -1,5 +1,7 @@
 # auto-epp-go
 
+[![auto-epp-go](https://img.shields.io/aur/version/auto-epp-go?color=1793d1&label=auto-epp-go&logo=arch-linux&style=for-the-badge)](https://aur.archlinux.org/packages/auto-epp-go/)
+
 **auto-epp-go** is a program that manages the energy performance preferences (EPP) of your AMD CPU using the AMD-Pstate driver. It adjusts the EPP settings based on whether your system is running on AC power or battery power, helping optimize power consumption and performance. This project is a rewrite of the original Python version [jothi-prasath/auto-epp](https://github.com/jothi-prasath/auto-epp) in Golang, aiming to improve memory efficiency and overall performance.
 
 ## Requirements
@@ -39,6 +41,15 @@ options    ... amd_pstate=active
 ```
 
 ## Installation
+
+### Arch Linux
+
+On Arch Linux, and Arch-based distributions, auto-epp-go can be found in the AUR. Install with an AUR helper like yay:
+```bash
+yay -S auto-epp-go
+```
+
+### Manual Install
 
 ```bash
 git clone https://github.com/tfkhdyt/auto-epp-go
