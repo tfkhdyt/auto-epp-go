@@ -15,14 +15,13 @@ func main() {
 	eppStateForAC, eppStateForBAT := config.ReadConfig()
 
 	for {
-		set.SetGovernor()
-
 		if checker.CheckChargingStatus() {
+			set.SetGovernor("performance")
 			set.SetEPP(eppStateForAC)
 		} else {
+			set.SetGovernor("powersave")
 			set.SetEPP(eppStateForBAT)
 		}
-
 		time.Sleep(2 * time.Second)
 	}
 }
