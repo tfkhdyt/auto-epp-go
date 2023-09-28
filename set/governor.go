@@ -6,7 +6,7 @@ import (
 	"runtime"
 )
 
-func SetGovernor(governor string) {
+func SetGovernor() {
 	cpuCount := runtime.NumCPU()
 
 	for cpu := 0; cpu < cpuCount; cpu++ {
@@ -14,7 +14,7 @@ func SetGovernor(governor string) {
 			Sprintf("/sys/devices/system/cpu/cpu%d/cpufreq/scaling_governor", cpu)
 		if err := os.WriteFile(
 			governorFilePath,
-			[]byte(governor),
+			[]byte("powersave"),
 			0o644,
 		); err != nil {
 			fmt.Println("Failed to set scaling governor:", err)
